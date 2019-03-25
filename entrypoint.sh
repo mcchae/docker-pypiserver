@@ -19,5 +19,6 @@ exec /usr/local/bin/pypi-server \
     --port ${PYPI_PORT} \
     --passwords "${PYPI_PASSWD_FILE}" \
     --authenticate "${PYPI_AUTHENTICATE}" \
+	--server twisted \
     ${_extra} \
     "${PYPI_ROOT}"

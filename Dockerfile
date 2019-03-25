@@ -8,7 +8,7 @@ RUN apt-get update \
     && mkdir -p /pypi
 
 RUN pip3 install -U pip
-RUN pip3 install -U passlib pypiserver[cache]==1.2.1
+RUN pip3 install -U passlib pypiserver twisted
 
 EXPOSE 80
 VOLUME ["/pypi"]
