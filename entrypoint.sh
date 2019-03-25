@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PYPI_ROOT="${PYPI_ROOT:-/pypi}"
 PYPI_PORT=${PYPI_PORT:-80}
