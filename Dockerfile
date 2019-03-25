@@ -1,12 +1,13 @@
-FROM alpine:3.6
+FROM ubuntu:16.04
 MAINTAINER Jerry Chae <mcchae@gmail.com>
 
-RUN apk update && \
-    apk add py-pip && \
-    pip install --upgrade pip && \
-    mkdir -p /pypi
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN pip install -U passlib pypiserver[cache]==1.2.1
+RUN apt-get update \
+	&& apt-get install -y python3 python3-dev python3-pip \
+    && mkdir -p /pypi
+
+RUN pip3 install -U passlib pypiserver[cache]==1.2.1
 
 EXPOSE 80
 VOLUME ["/pypi"]
