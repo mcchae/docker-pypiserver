@@ -7,6 +7,7 @@ RUN apt-get update \
 	&& apt-get install -y python3 python3-dev python3-pip \
     && mkdir -p /pypi
 
+RUN pip3 install -U pip
 RUN pip3 install -U passlib pypiserver[cache]==1.2.1
 
 EXPOSE 80
