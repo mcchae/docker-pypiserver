@@ -15,7 +15,7 @@ if [[ "${PYPI_OVERWRITE}" != "" ]]; then
     _extra="${_extra} --overwrite"
 fi
 
-exec /usr/bin/pypi-server \
+exec /usr/local/bin/pypi-server \
     --port ${PYPI_PORT} \
     --passwords "${PYPI_PASSWD_FILE}" \
     --authenticate "${PYPI_AUTHENTICATE}" \
