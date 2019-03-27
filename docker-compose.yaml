@@ -1,0 +1,18 @@
+version: '2'
+services:
+  ##############################################################################
+  # Private PYPI Server
+  ##############################################################################
+  pypi_server:
+    image: mcchae/pypiserver
+    container_name: pp_pypi
+    hostname: pp_pypi.local
+    environment:
+      - PYPI_OVERWRITE=true
+      - PYPI_EXTRA=-v
+    volumes:
+      - "/path/pypi:/pypi:rw"
+    expose:
+      - 80/tcp
+    ports:
+      - "8080:80"
